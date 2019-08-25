@@ -1,0 +1,65 @@
+* {
+    padding: 0px;
+    margin: 0px;
+}
+
+body {
+    width: 100vw;
+    height: 100vh;
+    background: #d4cccc;
+}
+
+main {
+    width: 100%;
+    height: 100%;
+    padding-top: 4%;
+    text-align: center;
+}
+
+.card {
+    margin: 2% 1%;
+    display: inline-block;
+    width: 25%;
+    height: auto;
+}
+
+.card_header {
+    width: 100%;
+    height: auto;
+    background-color: #5730cd;
+}
+
+#main_img {
+    display: inline-block;
+    height: auto;
+}
+
+#main_img img {
+    width: 100%;
+    height: 100%;
+}
+
+#main_context {
+    display: inline-block;
+    width: 33%;
+    height: auto;
+    position: relative;
+    bottom: 30%;
+}
+
+
+.card_footer {
+    width: 100%;
+    height: auto;
+    background: whitesmoke;
+}
+
+.etc {
+    display: inline-block;
+    width: 30%;
+    height: 100%;
+}
+
+#information {
+    display: block;
+}

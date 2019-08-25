@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="index2.css">
+    <title>WEATHER</title>
+    <script src="http://code.jquery.com/jquery-1.7.min.js"></script>
+    <script>
+        function enter(event) {
+            if (event.code === 'Enter' || event.code === 'NumpadEnter') {
+                citySubmit();
+            }
+        }
+        function citySubmit() {
+            var city = document.getElementById("city");
+            alert(city.value + "의 날씨를 알려드리겠습니다.");
+            var apiUri = "http://api.openweathermap.org/data/2.5/weather?q=" + city.value + "&appid=0c3818540b5a4e8be7c9aa668d3fbcb2";
+            $.ajax({
+                url: apiUri,
+                dataType: "json",
+                type: "GET",
+                async: "false",
+                success: function (data) {
+                    var humidity = document.getElementById("humidity");
+                    $('#humidity').empty();
+                    humidity.innerHTML = "습도<br/>";
+                    humidity.append(data.main.humidity + "%");
+
+                    var temp = document.getElementById("temp");
+                    $('#temp').empty();
+                    temp.prepend(Math.floor(data.main.temp - 273.15), "도");
+
+                    var imgUrl = "http://openweathermap.org/img/w/" + data.weather[0].icon + ".png";
+                    $("img").attr("src", imgUrl);
+
+                    var main = document.getElementById("main");
+                    $('#main').empty();
+                    main.innerHTML = "하늘상태<br/>";
+                    main.append(data.weather[0].main);
+
+                    var clouds = document.getElementById("clouds");
+                    $('#clouds').empty();
+                    clouds.innerHTML = "강수량<br/>";
+                    clouds.append(data.clouds.all + "%");
+
+                    var location = document.getElementById("location");
+                    $("#location").empty();
+                    location.append(data.name + "," + data.sys.country);
+                },
+                error: function () {
+                    alert("존재하는 도시가 아닙니다.");
+                }
+            })
+        }
+    </script>
+</head>
+
+<body>
+    <main>
+        <p>궁금하신 도시의 이름을 영어로 입력해주세요 ex) seoul, daejeon, busan...</p>
+        <div id="information">
+            <input type="text" id="city" onkeypress="enter(event)">
+            <input type="submit" id="city_submit" onclick="citySubmit()">
+        </div>
+        <div class="card">
+            <div class="card_header">
+                <div id="main_img">
+                    <img id="img" src="" alt="">
+                </div>
+                <div id="main_context">
+                    <h1 id="temp">도</h1>
+                    <h3 id="location"></h3>
+                </div>
+            </div>
+            <div class="card_footer">
+                <div class="etc" id="main">하늘상태<br></div>
+                <div class="etc" id="humidity">습도<br></div>
+                <div class="etc" id="clouds">강수량<br></div>
+            </div>
+        </div>
+    </main>
+</body>
+
+</html>

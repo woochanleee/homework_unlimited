@@ -1,0 +1,94 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    width: 100vw;
+    height: 100vh;
+}
+
+main {
+    width: 40%;
+    height: 35%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    border: 1px solid red;
+}
+
+.card {
+    width: 100%;
+    height: 80%;
+}
+
+.card_header {
+    display: flex;
+    width: 100%;
+    height: 60%;
+}
+
+.card_footer {
+    display: flex;
+    width: 100%;
+    height: 40%;
+}
+
+p {
+    height: 10%;
+    font-size: 14px;
+    font-family: sans-serif;
+    padding: 1%;
+}
+
+#information {
+    width: auto;
+    height: 10%;
+}
+
+#city {
+    box-sizing: border-box;
+    height: 100%;
+    border: 1px solid;
+    border-radius: 20px;
+    padding-left: 2%;
+}
+
+#city_submit {
+    height: 88%;
+    border: 1px solid;
+    border-radius: 20px;
+    background-color: gray;
+}
+
+#main_img {
+    width: 60%;
+    height: 100%;
+}
+
+#main_context {
+    width: 40%;
+    height: 100%;
+}
+
+img {
+    width: 100%;
+    height: 100%;
+}
+
+.etc {
+    flex: 1;
+    height: 100%;
+}
+
+#temp {
+    width: 100%;
+    height: 50%;
+}
+
+#location {
+    width: 100%;
+    height: 50%;
+}
