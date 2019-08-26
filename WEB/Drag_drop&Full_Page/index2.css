@@ -1,0 +1,79 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    width: 100vw;
+    height: 100vh;;
+    -ms-overflow-style: none; /* IE에서 스크롤바 감춤 */
+    overflow: hidden;
+}
+
+::-webkit-scrollbar {
+    display: none !important; /* 윈도우 크롬 등 */
+}
+
+.section {
+    height: 90%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+}
+
+.box1 {
+    background-color: lightblue;
+}
+
+.box2 {
+    background-color: red;
+}
+
+.box3 {
+    background-color: yellow;
+}
+
+.box4 {
+    background-color: black;
+    justify-content: space-around;
+}
+
+.drag_drop {
+    width: 180px;
+	height: 300px;
+	padding: 5px;
+    /* border: solid 15px #8B4513; */
+    border: 5px solid white;
+}
+
+h1 {
+    color: white;
+    display: block;
+}
+
+.nav {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+}
+
+.nav button {
+    padding: 10px;
+    border: 0;
+    border-radius: 5px;
+}
+
+.footer {
+    display: flex;
+    width: 100%;
+    height: 10%;
+    background-color: gray;
+    justify-content:center;
+    align-items: center;
+}
+
+.main {
+    width: 100%;
+    height: 100%;
+}

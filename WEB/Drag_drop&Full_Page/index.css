@@ -1,0 +1,40 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    width: 100vw;
+    height: 300vh;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+#fullPage {
+    width: 100vw;
+    height: 300vh;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+.section {
+    width: 100%;
+    flex: 1;
+}
+
+h1 {
+    text-align: center;
+}
+
+.s1 {
+    background: red;
+}
+.s2 {
+    background: green;;
+}
+
+.s3 {
+    background: blue;
+}

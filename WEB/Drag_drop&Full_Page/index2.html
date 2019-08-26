@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="./index2.css">
+</head>
+<body> 
+    <div class="nav">
+        <button id="prev" draggable="true" ondragstart="drag(event)">Previous</button>
+        <button id="next" draggable="true" ondragstart="drag(event)">Next</button>
+        <!-- <button id="dragBtn" draggable="true">DragMe!</button> -->
+    </div>
+    <div class="main">
+        <div class="section box1">
+            <h1>First</h1>
+        </div>
+        <div class="footer" ondrop="dragScroll(event)" ondragover="dragEnter(event)">
+            <h1>Drag Button to me</h1>
+        </div>
+    </div>
+
+    <div class="main">
+        <div class="section box2">
+            <h1>Second</h1>
+        </div>
+        <div class="footer" ondrop="dragScroll(event)" ondragover="dragEnter(event)">
+            <h1>Drag Button to me</h1>
+        </div>
+    </div>
+    <div class="main">
+        <div class="section box3">
+            <h1>Third</h1>
+        </div>
+        <div class="footer" ondrop="dragScroll(event)" ondragover="dragEnter(event)">
+            <h1>Drag Button to me</h1>
+        </h1>
+    </div>
+    <div class="main">
+        <div class="section box4">
+            <h1>Fourth</h1>
+            <div class="drag_drop" ondrop="drop(event)" ondragover="dragEnter(event)">
+                <img id="monalisa" width="180" height="300"  src="./iphone.png" draggable="true"
+                    ondragstart="drag(event)">
+            </div>
+            <div class="drag_drop" ondrop="drop(event)" ondragover="dragEnter(event)"></div>
+        </div>
+        <div class="footer" ondrop="dragScroll(event)" ondragover="dragEnter(event)">
+            <h1>Drag Button to me</h1>
+        </div>
+    </div>
+    
+    
+
+    <script>
+        // https://developer-salieri.tistory.com/126
+        // preventDefault() 를 왜 쓰는가?   
+        function dragEnter(ev) {
+            ev.preventDefault(); // 기본적으로 데이터 / 요소는 다른 요소에 놓을 수 없습니다. 드롭을 허용하려면 요소의 기본 처리를 방지해야합니다.
+        }
+
+        function drag(ev) {
+            ev.dataTransfer.setData("text", ev.target.id);
+        }
+
+        function drop(ev) {
+            ev.preventDefault(); // 데이터의 브라우저 기본 처리를 방지하려면 preventDefault ()를 호출하십시오 (기본값은 드롭 다운 링크로 열림)
+            var data = ev.dataTransfer.getData("text");
+            // ev.target.appendChild(document.getElementById(data).cloneNode());
+            ev.target.appendChild(document.getElementById(data));
+        }
+    </script>
+    <script src="./index2.js"></script>
+</body>
+</html>
